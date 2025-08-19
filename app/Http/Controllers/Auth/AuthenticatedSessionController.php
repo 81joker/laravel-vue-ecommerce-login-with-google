@@ -93,7 +93,6 @@ class AuthenticatedSessionController extends Controller
         // if the user doesn't exist, create a new user
         // if they do, log them in
         // either way, authenticate the user into the application and redirect afterwards
-        // $user->token
         $user = User::firstOrCreate(
             ['email' => $user->email],
             [
