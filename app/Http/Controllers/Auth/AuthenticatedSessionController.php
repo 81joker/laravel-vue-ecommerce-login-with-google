@@ -58,7 +58,6 @@ class AuthenticatedSessionController extends Controller
 
     public function githubRedirect()
     {
-        // get auth request back from github to authenticate user
          $user = Socialite::driver('github')->user();
 
         // if the user doesn't exist, create a new user
