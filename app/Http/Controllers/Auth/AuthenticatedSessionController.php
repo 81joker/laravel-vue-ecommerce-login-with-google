@@ -98,9 +98,7 @@ class AuthenticatedSessionController extends Controller
             ['email' => $user->email],
             [
                 'name' => $user->name,
-                // 'email' => $user->getEmail(),
-                // 'avatar' => $user->getAvatar(),
-                'password' => Hash::make(Str::random(16)), // Set a default password or handle it as needed
+                'password' => Hash::make(Str::random(16)), 
                 ]
         );
         Auth::login($user, true);
