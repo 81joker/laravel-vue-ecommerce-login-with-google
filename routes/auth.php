@@ -33,6 +33,15 @@ Route::middleware('guest')->group(function () {
 
     Route::post('reset-password', [NewPasswordController::class, 'store'])
         ->name('password.store');
+
+
+    // Sign-In with GitHub
+    Route::get('/sign-in/github', [AuthenticatedSessionController::class, 'github'])->name('github.login');
+    Route::get('/sign-in/github/redirect', [AuthenticatedSessionController::class, 'githubRedirect'])->name('github.callback');
+
+    // Sign-In with Google
+    Route::get('/sign-in/google', [AuthenticatedSessionController::class, 'google'])->name('google.login');
+    Route::get('/sign-in/google/redirect', [AuthenticatedSessionController::class, 'googleRedirect'])->name('google.callback');
 });
 
 Route::middleware('auth')->group(function () {
