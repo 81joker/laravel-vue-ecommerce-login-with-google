@@ -61,7 +61,6 @@ class AuthenticatedSessionController extends Controller
          $user = Socialite::driver('github')->user();
 
         // if the user doesn't exist, create a new user
-        // if they do, log them in
         // either way, authenticate the user into the application and redirect afterwards        
         $user = User::firstOrCreate(
             ['email' => $user->email],
